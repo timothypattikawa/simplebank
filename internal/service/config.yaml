@@ -1,0 +1,15 @@
+service:
+  port: 9091
+  port-grpc: 9090
+db:
+  portgres:
+    username: "root"
+    password: "secret"
+    host: "localhost"
+    port: 5431
+    schema: "simple_bank"
+    min-open: 10
+    max-open: 100
+    max-life-time: 12s
+    keep-alive-interval: 20s
+
