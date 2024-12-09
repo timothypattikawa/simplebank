@@ -23,7 +23,8 @@ jobs:
           POSTGRES_PASSWORD: secret
           POSTGRES_USER: root
           POSTGRES_DB: simple_bank
-        port: 5431:5432
+        ports:
+          - 5431:5432
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -42,7 +43,9 @@ jobs:
         id: go
 
       - name : install migrate
-        run: curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add - && echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list && apt-get install -y migrate
+        run: curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add - 
+            echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list 
+            sudo apt-get install -y migrate
 
       - name: migrate
         run: make migrateup
