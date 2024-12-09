@@ -6,7 +6,7 @@ db:
     username: "root"
     password: "secret"
     host: "localhost"
-    port: 5431
+    port: 5432
     schema: "simple_bank"
     min-open: 10
     max-open: 100
