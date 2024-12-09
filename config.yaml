@@ -6,7 +6,7 @@ db:
     username: "root"
     password: "secret"
     host: "localhost"
-    port: 5431
+    port: 5432
     min-open: 10
     max-open: 100
     max-life-time: 12s
